@@ -11,7 +11,7 @@ const authRoute = require("./routes/auth")
 const productRoute = require("./routes/products")
 require("./prod")(app)
 var cors = require('cors')
-const hostname = "52.90.101.86"
+
 app.use(cors())
 // console.log(!config.get('jwtPrivateKey'))
 if (!config.get('jwtPrivateKey')) {
@@ -38,5 +38,9 @@ app.use("/auth", authRoute)
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-    console.log(`http://${hostname}:${port}/`)
+    console.log(`${port} portga ulandi`)
 })
+
+
+
+
