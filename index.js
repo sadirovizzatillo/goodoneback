@@ -13,12 +13,12 @@ require("./prod")(app)
 var cors = require('cors')
 
 app.use(cors())
-// console.log(!config.get('jwtPrivateKey'))
+console.log(!config.get('jwtPrivateKey'))
 if (!config.get('jwtPrivateKey')) {
   console.error('JIDDIY XATO: virtualdars_jwtPrivateKey muhit o\'zgaruvchisi aniqlanmagan.');
   process.exit(1);
 }
-mongoose.connect("mongodb+srv://Izzatillo:a-z123456789@cluster0.csxvtdd.mongodb.net/mango?retryWrites=true", { useNewUrlParser: true }).then(() => {
+mongoose.connect("mongodb+srv://Izzatillo:A-z123456789@cluster0.csxvtdd.mongodb.net/mango?retryWrites=true", { useNewUrlParser: true }).then(() => {
 console.log("mongo db ga ulandi")
 }).catch((err) => {
     console.error("mongoDb ga ulanish xato", err)
