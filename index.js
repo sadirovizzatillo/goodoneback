@@ -36,7 +36,8 @@ app.use("/user", userRoute)
 app.use("/auth", authRoute)
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.Port || 5000;
+console.log(process.env.Port)
 app.listen(port, () => {
   console.log(`${port} portga ulandi`)
 })

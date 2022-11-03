@@ -1,4 +1,3 @@
 {
-    "jwtPrivateKey": "virtualdars_jwtPrivateKey",
-    "db":"goodone_connstring"
+    "jwtPrivateKey": "virtualdars_jwtPrivateKey"
 }
