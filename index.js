@@ -10,7 +10,7 @@ const userRoute = require("./routes/user")
 const authRoute = require("./routes/auth")
 const productRoute = require("./routes/products")
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://Izzatillo:<password>@cluster0.csxvtdd.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Izzatillo:A-z123456789@cluster0.csxvtdd.mongodb.net/mango?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
