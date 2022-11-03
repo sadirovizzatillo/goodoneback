@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
-// const config = require('config');
-// const url = process.env.goodone_connstring
+const config = require('config');
 const app = express()
 const categoriesRoute = require("./routes/categories")
 const customersRoute = require("./routes/customer")
@@ -13,15 +12,15 @@ require("./prod")(app)
 var cors = require('cors')
 
 app.use(cors())
-// console.log(!config.get('jwtPrivateKey'))
-// if (!config.get('jwtPrivateKey')) {
-//   console.error('JIDDIY XATO: virtualdars_jwtPrivateKey muhit o\'zgaruvchisi aniqlanmagan.');
-//   process.exit(1);
-// }
+console.log(!config.get('jwtPrivateKey'))
+if (!config.get('jwtPrivateKey')) {
+  console.error('JIDDIY XATO: virtualdars_jwtPrivateKey muhit o\'zgaruvchisi aniqlanmagan.');
+  process.exit(1);
+}
 mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true }).then(() => {
 console.log("mongo db ga ulandi")
 }).catch((err) => {
-    console.error("mongoDb ga ulanish xato", err)
+  console.error("mongoDb ga ulanish xato", err)
 })
 // mongoose.set(, false);
 
@@ -39,7 +38,7 @@ app.use("/auth", authRoute)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-    console.log(`${port} portga ulandi`)
+  console.log(`${port} portga ulandi`)
 })
 
 
