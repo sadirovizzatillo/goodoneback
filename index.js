@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const config = require('config');
-
+const url = process.env.goodone_connstring
 const app = express()
 const categoriesRoute = require("./routes/categories")
 const customersRoute = require("./routes/customer")
