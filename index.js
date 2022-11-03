@@ -29,13 +29,16 @@ app.use(express.json())
 
 
 app.use("/category", categoriesRoute)
-app.use("/product", productRoute)
+app.use("/product", checkUserAuth, productRoute)
 app.use("/customer", customersRoute)
 app.use("/course", courseRoute)
 app.use("/user", userRoute)
 app.use("/auth", authRoute)
 
-
+function checkUserAuth(req, res, next) {
+  if (req.session.user) return next();
+  return next(new NotAuthorizedError());
+}
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`${port} portga ulandi`)
