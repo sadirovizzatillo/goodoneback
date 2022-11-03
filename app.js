@@ -38,5 +38,5 @@ app.use("/auth", authRoute)
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-    console.log(`http://${hostname}:${port}/`)
+    console.log(`http://${hostname}:${port}/portga ulandi`)
 })
