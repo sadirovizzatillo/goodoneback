@@ -18,7 +18,7 @@ if (!config.get('jwtPrivateKey')) {
   console.error('JIDDIY XATO: virtualdars_jwtPrivateKey muhit o\'zgaruvchisi aniqlanmagan.');
   process.exit(1);
 }
-mongoose.connect("mongodb+srv://Izzatillo:A-z123456789@cluster0.csxvtdd.mongodb.net/mango?retryWrites=true", { useNewUrlParser: true }).then(() => {
+mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true }).then(() => {
 console.log("mongo db ga ulandi")
 }).catch((err) => {
     console.error("mongoDb ga ulanish xato", err)
