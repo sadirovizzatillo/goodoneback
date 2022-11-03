@@ -17,9 +17,8 @@ if (!config.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
-mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", {  useFindAndModify: false, 
+mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", {  
 useNewUrlParser: true, 
-useCreatendex: true, 
 useUnifiedTopology: true  }).then(() => {
   console.log("mongo db ga ulandi")
 }).catch((err) => {
