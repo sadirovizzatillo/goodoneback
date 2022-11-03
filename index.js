@@ -17,11 +17,12 @@ if (!config.get('jwtPrivateKey')) {
   process.exit(1);
 }
 
-mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, }).then(() => {
+mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true }).then(() => {
 console.log("mongo db ga ulandi")
 }).catch((err) => {
   console.error("mongoDb ga ulanish xato", err)
 })
+// mongoose.set('useFindAndModify', false);
 
 app.use(express.json())
 
@@ -35,7 +36,7 @@ app.use("/user", userRoute)
 app.use("/auth", authRoute)
 
 
-const port = process.env.Port || 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`${port} portga ulandi`)
 })
