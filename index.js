@@ -10,19 +10,18 @@ const authRoute = require("./routes/auth")
 const productRoute = require("./routes/products")
 require("./prod")(app)
 var cors = require('cors')
-
 app.use(cors())
-console.log(!config.get('jwtPrivateKey'))
+
 if (!config.get('jwtPrivateKey')) {
   console.error('JIDDIY XATO: virtualdars_jwtPrivateKey muhit o\'zgaruvchisi aniqlanmagan.');
   process.exit(1);
 }
+
 mongoose.connect("mongodb+srv://Sadirov:a-z123456789@cluster0.csxvtdd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true }).then(() => {
 console.log("mongo db ga ulandi")
 }).catch((err) => {
   console.error("mongoDb ga ulanish xato", err)
 })
-// mongoose.set(, false);
 
 app.use(express.json())
 
