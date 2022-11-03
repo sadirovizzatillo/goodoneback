@@ -9,6 +9,14 @@ const courseRoute = require("./routes/courses")
 const userRoute = require("./routes/user")
 const authRoute = require("./routes/auth")
 const productRoute = require("./routes/products")
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://Izzatillo:<password>@cluster0.csxvtdd.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 require("./prod")(app)
 var cors = require('cors')
 
@@ -18,11 +26,11 @@ if (!config.get('jwtPrivateKey')) {
   console.error('JIDDIY XATO: virtualdars_jwtPrivateKey muhit o\'zgaruvchisi aniqlanmagan.');
   process.exit(1);
 }
-mongoose.connect("mongodb://localhost/test-mongodb", { useNewUrlParser: true }).then(() => {
-console.log("mongo db ga ulandi")
-}).catch((err) => {
-    console.error("mongoDb ga ulanish xato", err)
-})
+// mongoose.connect("mongodb://localhost/test-mongodb", { useNewUrlParser: true }).then(() => {
+// console.log("mongo db ga ulandi")
+// }).catch((err) => {
+//     console.error("mongoDb ga ulanish xato", err)
+// })
 // mongoose.set(, false);
 
 app.use(express.json())
